@@ -1,0 +1,300 @@
+@import '../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../app/Filament/**/*.php';
+@source '../../../resources/views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --color-hr-primary: #7c3aed;
+    --color-hr-primary-hover: #8b5cf6;
+    --color-hr-primary-soft: rgb(124 58 237 / 0.15);
+    --color-hr-secondary: #8b5cf6;
+    --color-hr-bg: #0b1120;
+    --color-hr-card: #151c2c;
+    --color-hr-elevated: #1b2436;
+    --color-hr-input: #202a3d;
+    --color-hr-text: #f8fafc;
+    --color-hr-secondary-text: #a7b0c0;
+    --color-hr-muted: #7e899c;
+    --color-hr-border: #293449;
+}
+
+@layer components {
+    .hr-card {
+        @apply rounded-2xl border border-[#293449] bg-[#151C2C] shadow-[0_18px_38px_rgba(0,0,0,0.22)];
+    }
+
+    .hr-card-pad {
+        @apply rounded-2xl border border-[#293449] bg-[#151C2C] p-5 shadow-[0_18px_38px_rgba(0,0,0,0.22)];
+    }
+
+    .hr-muted {
+        @apply text-[#A7B0C0];
+    }
+
+    .hr-title {
+        @apply text-xl font-semibold tracking-tight text-[#F8FAFC];
+    }
+
+    .hr-kpi {
+        @apply rounded-2xl border border-[#293449] bg-[#151C2C] p-4 shadow-[0_18px_38px_rgba(0,0,0,0.2)];
+    }
+
+    .hr-filter-bar {
+        @apply rounded-2xl border border-[#293449] bg-[#151C2C] p-3 shadow-[0_18px_38px_rgba(0,0,0,0.2)];
+    }
+
+    .hr-progress {
+        @apply h-2 overflow-hidden rounded-full bg-[rgba(124,58,237,0.15)];
+    }
+
+    .hr-progress-fill {
+        @apply h-full rounded-full bg-[#7C3AED];
+    }
+}
+
+@layer utilities {
+    html {
+        color-scheme: dark;
+    }
+
+    .fi-body,
+    .fi-layout {
+        background: #0b1120 !important;
+        color: #f8fafc !important;
+    }
+
+    .fi-sidebar {
+        background: #111827 !important;
+        border-right: 1px solid #293449 !important;
+        box-shadow: 8px 0 30px rgb(0 0 0 / 0.22);
+    }
+
+    .fi-sidebar-header {
+        border-bottom: 0 !important;
+        padding-inline: 1rem !important;
+    }
+
+    .fi-logo,
+    .fi-logo-text {
+        color: #f8fafc !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.03em;
+    }
+
+    .fi-sidebar-nav {
+        padding-inline: 0.75rem !important;
+    }
+
+    .fi-sidebar-item-button {
+        border-radius: 0.85rem !important;
+        color: #a7b0c0 !important;
+        transition: all 160ms ease;
+    }
+
+    .fi-sidebar-item-button:hover {
+        background: rgb(124 58 237 / 0.1) !important;
+        color: #ffffff !important;
+    }
+
+    .fi-sidebar-item-button svg {
+        color: #8993a5 !important;
+    }
+
+    .fi-sidebar-item-button:hover svg {
+        color: #ffffff !important;
+    }
+
+    .fi-sidebar-item.fi-active .fi-sidebar-item-button {
+        background: #7c3aed !important;
+        color: #ffffff !important;
+        box-shadow: 0 12px 24px rgb(124 58 237 / 0.28);
+    }
+
+    .fi-sidebar-item.fi-active svg,
+    .fi-sidebar-item.fi-active .fi-sidebar-item-label {
+        color: #ffffff !important;
+    }
+
+    .fi-topbar {
+        background: rgb(17 24 39 / 0.94) !important;
+        border-bottom: 1px solid #293449 !important;
+        backdrop-filter: blur(18px);
+    }
+
+    .fi-page-main {
+        padding: 1.25rem !important;
+    }
+
+    @media (min-width: 1024px) {
+        .fi-page-main {
+            padding: 1.75rem 2rem !important;
+        }
+    }
+
+    .fi-section,
+    .fi-wi-widget .fi-section,
+    .fi-ta-ctn,
+    .fi-modal-window,
+    .fi-pagination,
+    .fi-ac-modal,
+    .fi-fo-tabs,
+    .fi-tabs {
+        border: 1px solid #293449 !important;
+        border-radius: 1rem !important;
+        background: #151c2c !important;
+        color: #f8fafc !important;
+        box-shadow: 0 18px 42px rgb(0 0 0 / 0.28) !important;
+    }
+
+    .fi-btn {
+        border-radius: 0.7rem !important;
+        font-weight: 600 !important;
+    }
+
+    .fi-btn-color-primary {
+        background: #7c3aed !important;
+    }
+
+    .fi-btn-color-primary:hover {
+        background: #8b5cf6 !important;
+    }
+
+    .fi-input-wrp,
+    .fi-select-input,
+    .fi-input,
+    .fi-textarea,
+    .fi-fo-rich-editor-editor,
+    .fi-checkbox-input {
+        border-radius: 0.75rem !important;
+        background: #202a3d !important;
+        border-color: #303c52 !important;
+        color: #f8fafc !important;
+    }
+
+    .fi-input::placeholder,
+    .fi-select-input::placeholder {
+        color: #788397 !important;
+    }
+
+    select option {
+        background: #202a3d !important;
+        color: #f8fafc !important;
+    }
+
+    .fi-badge {
+        border-radius: 999px !important;
+        font-weight: 600 !important;
+    }
+
+    .fi-ta-table thead {
+        background: #1b2436 !important;
+    }
+
+    .fi-ta-row:hover {
+        background: rgb(124 58 237 / 0.06) !important;
+    }
+
+    .fi-ta-table,
+    .fi-ta-row,
+    .fi-ta-cell,
+    .fi-ta-header-cell {
+        background-color: transparent !important;
+        border-color: #293449 !important;
+        color: #f8fafc !important;
+    }
+
+    .fi-header-heading,
+    .fi-section-header-heading,
+    .fi-wi-stats-overview-stat-value,
+    .fi-ta-text,
+    .fi-ta-header-cell-label,
+    .fi-modal-heading,
+    .fi-fo-field-wrp-label span {
+        color: #f8fafc !important;
+    }
+
+    .fi-section-header-description,
+    .fi-wi-stats-overview-stat-description,
+    .fi-ta-text-item-label,
+    .fi-fo-field-wrp-helper-text,
+    .fi-modal-description {
+        color: #a7b0c0 !important;
+    }
+
+    .fi-dropdown-panel {
+        background: #1b2436 !important;
+        border-color: #293449 !important;
+        color: #f8fafc !important;
+    }
+
+    .fi-dropdown-list-item,
+    .fi-user-menu-panel .fi-dropdown-list-item {
+        color: #a7b0c0 !important;
+    }
+
+    .fi-dropdown-list-item:hover {
+        background: rgb(124 58 237 / 0.1) !important;
+        color: #ffffff !important;
+    }
+
+    .fi-page .bg-white,
+    .fi-page .bg-gray-50,
+    .fi-page .dark\:bg-gray-900,
+    .fi-page .dark\:bg-gray-800,
+    .fi-wi-widget .bg-white,
+    .fi-modal .bg-white,
+    .fi-modal .bg-gray-50 {
+        background-color: #151c2c !important;
+    }
+
+    .fi-page .text-gray-500,
+    .fi-page .dark\:text-gray-400,
+    .fi-wi-widget .text-gray-500,
+    .fi-modal .text-gray-500 {
+        color: #a7b0c0 !important;
+    }
+
+    .fi-page .text-gray-900,
+    .fi-page .text-gray-950,
+    .fi-page .dark\:text-white,
+    .fi-wi-widget .text-gray-900,
+    .fi-wi-widget .text-gray-950,
+    .fi-modal .text-gray-900,
+    .fi-modal .text-gray-950 {
+        color: #f8fafc !important;
+    }
+
+    .fi-modal-close-overlay {
+        background: rgb(0 0 0 / 0.62) !important;
+    }
+
+    .fi-wi-chart canvas {
+        max-height: 280px;
+    }
+
+    .fi-color-success.fi-badge {
+        background: rgb(16 185 129 / 0.13) !important;
+        color: #86efac !important;
+    }
+
+    .fi-color-warning.fi-badge {
+        background: rgb(245 158 11 / 0.14) !important;
+        color: #fcd34d !important;
+    }
+
+    .fi-color-danger.fi-badge {
+        background: rgb(239 68 68 / 0.14) !important;
+        color: #fca5a5 !important;
+    }
+
+    .fi-color-info.fi-badge {
+        background: rgb(59 130 246 / 0.14) !important;
+        color: #93c5fd !important;
+    }
+
+    .fi-color-gray.fi-badge {
+        background: rgb(148 163 184 / 0.12) !important;
+        color: #cbd5e1 !important;
+    }
+}
